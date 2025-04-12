@@ -1,0 +1,485 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background:#080808;
+    color: #fff;
+}
+
+html{
+    scroll-behavior:smooth; /*smooth scrolling*/
+}
+#header {
+    width:100% ;
+    height:100vh; /* 100% of the viewport height 100% but more optimised*/
+    background-image: url("images/background.png"); /*absolute path will not work*/
+    background-size:cover;
+    background-position:center; /*even background has position*/
+
+}
+.container{
+    padding:10px 10%;/*vertical fixed, horizontal can vary*/
+}
+
+nav {        /*to adjust nav, resize log, items inline-block, style none and spacing top and bottom*/
+    display: flex;   /*it is a property */
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo{
+    width:140px;
+}
+
+nav ul li{
+    display:inline-block;
+    list-style:none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color:#fff;
+    text-decoration:none ;
+    font-size:18px;
+    position:relative;
+}
+
+nav ul li a::after {
+    content:'';
+    width:0;
+    height:3px;
+    background:#ff004f;
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    transition:0.5s;
+}
+
+nav ul li a:hover::after{  /*after hover what should be done... it  target the 
+                            element after the */
+    width:100%;
+}
+
+.header-text{
+    margin-top: 20%;
+    font-size:30px;  /*font size applies differently for h1 and p*/
+}
+
+.header-text h1{
+    margin-top:20px;
+    font-size:60px;
+}
+ .header-text span{
+        color:#ff004f;
+ }
+ /* ---------------------about--------------------------- */
+ .about{
+    padding:80px 0 ;
+    color:#ababab;
+    
+ }
+ /*.row img{
+    max-width:100%;  */       /*image width was too large so the below code for
+                               flex items didn't work*/
+    /* height:auto;
+ } */
+ .tab-contents{
+    display:none;  /*important because otherwise the row items
+                    will align with this and disrupt the container dimensions
+                    and make the .about class visible*/
+ }
+ .row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+ }
+.about-col-1{            /* if i were to mention a width here then this has more specificity */
+    flex-basis:35%;
+
+}
+ /*the below property was necessary because we had earlier made
+ it none so its contents would not have displayed. The below code
+ will make sure that display is not non aymore(same specificity so 
+ no one overrides the other)*/
+.tab-contents{
+    display:block;
+}
+
+.about-col-1 img{
+    max-width:100%;
+    height:auto;
+    border-radius:30px;
+}
+.about-col-2{
+    flex-basis:50%        /*adjust according to the space and the degree of left alignment you want*/
+}
+.sub-title{
+    font-size:60px;
+    font-weight:600;
+    color:#fff;
+}
+.sub-title+p{
+    font-size:20px;
+    line-height: 30px;
+}
+
+.tab-titles{
+    display:flex;           /*this style selector's main 
+                            aim is to give flex display to its 
+                            elements and control the spacing between them
+                            i.e its existence is for the elements*/
+    margin: 20px 0px 40px;
+}
+
+.tab-links{
+    margin-right:50px;
+    font-size:18px;
+    font-weight:500;
+    cursor: pointer;
+    position:relative;     
+}
+ .tab-links::after{
+    content:'';
+    width:0;
+    height:3px;
+    background:#ff004f;
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    transition:0.5s;
+ }
+
+
+ .tab-links.active-link::after{
+    width:50%;      /*only if both are there*/
+ }
+ .tab-contents ul li{
+    list-style:none;
+    margin:10px 0;
+
+ }
+ .tab-contents ul li span{
+    color:#b54769;
+    font-size:14px;
+ }
+ .tab-contents{
+    display:none;
+ }
+ .active-tab{
+    display:block;
+ }
+ /*grid-template-columns: minmax(20px, auto) 1fr 1fr;
+ probably means that there are 3 objects and the first object
+ can be anything it wants to be and the next 2 have fixed
+ ranges*/
+
+ /*started new section so define padding and stuff*/
+ #services{
+    margin-top:0px;
+    padding:12px 0;
+ }
+ .service-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    grid-gap:40px;
+    margin-top:40px;
+    
+ }
+ /*.grid-container {
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+}
+  is the format to use if the content in your grid cell are aligned 
+to the top left corner and you want it to be in the center*/
+
+ .service-list div{
+    background: #262626;
+    padding:60 px;
+    font-size: 13px;
+    font-weight:300;
+    border-radius: 10px;
+    min-height:200px;
+    justify-items:start;
+    align-items:center;
+    justify-content: space-between;
+    align-content: center;
+    transition: background 0.5s, transform 0.5s; /*why do we put the transition for the hover here?
+                        and in general for any type of effect*/
+    
+ }
+
+ /*here we're saying that the background should take 0.5s to transition
+ and transform is for the translation we had specified (translateY(-10px))
+ background is important because otherwise it does not look professional*/
+
+  .service-list div p{
+    margin:15px;
+  } 
+    
+
+  .service-list div i{
+    font-size:50px;
+    margin: 30px;
+  }
+  .service-list div h2{
+  font-size:30px;
+  font-weight:500;
+  margin: 15px;
+  
+} 
+.service-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size:12px;
+    margin:20px;
+    display:inline-block; /*I'm not seeing a huge difference*/
+}
+.service-list div:hover{
+    background:#ff004f;
+    transform:translateY(-10px);
+}
+/* ---------------------portfolio--------------------------- */
+#portfolio{
+    padding:70px 0;
+}
+.work-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    grid-gap:40px;
+    margin-top:40px;
+}
+.work{
+    border-radius: 10px;
+    position:relative;
+    overflow:hidden;
+}
+.work img{
+    width:100%;
+    display:block;/* i guess when it comes to elements we always put some kind of display */
+    transition:0.5s;
+
+}
+.layer{
+    
+    text-align:center;
+    width:100% ;
+    height:0%; /*to hide it*/
+    background:linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    position:absolute;
+    left:0;
+    bottom:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    overflow:hidden; /*because in out case, when the layer is not there, the heading and the link are still shown at the bottom*/
+    padding:0 40px; /*gap= when using grid*/
+    font-size:20px; /*will be overridden for the h3's because specificity of the below is higher*/
+    transition: height 0.5s;
+}
+.layer h3{
+    font-size:40px;
+    font-weight:600;
+    color:#fff;
+    margin-bottom;
+}
+
+.layer a{
+    margin-top:30px;
+    text-decoration:none;
+    font-size:30px;
+    color:#ff004f;
+    background-color:#fff;
+    border-radius:50%;
+    line-height:60px;
+    width: 60px;   /*this is the control of the circle in which
+                    the icon is in */
+    height:60px;
+
+}
+
+.work:hover img{
+    transform:scale(1.1);
+}
+
+.work:hover .layer{  /*descendent layer accessed only if parent is hovered over*/
+    height:100%;
+    
+}
+.btn{
+    display:block;
+    border: 1px solid #ff004f;   /*this is why it looks like a button*/
+    border-radius:3px;
+    margin: 14px auto;
+    padding:14px;
+    width:fit-content;
+    text-decoration: none;
+    color:#fff ;
+    transition: background 0.5s;
+    /* position:relative;     i.g we only use this position thingy for width transitions */
+
+}
+.btn:hover{
+    background:#ff004f;
+}
+/* --------------------------------contact--------------------------- */
+.contact-left{
+    flex-basis:35%;
+}
+
+.contact-right{
+    flex-basis:60%;
+}
+
+.contact-left p{
+    margin-top:30px;
+}
+
+.contact-left p i{
+    color:#ff004f;
+    margin-right:30px;
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    color:#ababab;
+    margin-right:15px;
+    font-size:30px;
+    display:inline-block;
+    transition:0.5s;
+}
+
+.social-icons a:hover{
+    color:#ff004f;
+    transform:translateY(-5px);
+
+}
+ .btn.btn2{   /*no space prolly because it means descendants */
+    display:inline-block;
+    background:#ff004f; /*the hover properties of the buttons 
+                            is overridden but the border and stuff are still there*/
+    margin-left:-2px;
+    
+}
+
+form input,form textarea{
+    width:100%;
+    padding: 15px;
+    margin: 15px 0;
+    background: #262626;
+    border:0;
+    outline:none;
+    color:#fff;
+    border-radius:5px;
+}
+
+form .btn2{
+    padding:14px 60px;
+    font-size:18px;
+    margin-top: 20px;
+    cursor:pointer;
+}
+
+#msg{
+    color:lightseagreen;
+    font-size:16px;
+}
+
+.copyright{
+    width:100%;
+    padding:25px 0;
+    font-weight:300;
+    background:#262626;
+    text-align:center;
+    margin-top:20px;
+}
+
+.copyright i{
+    color:#ff004f;
+}
+/* --------------------------------------smaller sizes--------------------- */
+nav .fas{
+    display:none;
+}
+@media only screen and (max-width:600px){
+    #header{
+        background-image:url("images/phone-background.png");
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size:30px;
+    }
+
+    nav .fas{
+        display:block;
+        font-size: 25px;
+    }
+
+    nav ul{
+        width:200px;
+        height:100vh;
+        background:#ff004f;
+        top:0;        /*top,right,left,right are for position:fixed*/
+        right:-200px; /*another way to hide it (width is 200)*/
+        padding-top:50px;
+        position:fixed;
+        transition: right 0.5s;/*i.g we changed right's value instead of simply doing display:none so that
+                                the transition is from the right. We don't use display:none if we want to apply animations*/
+        z-index:1;              
+
+    }
+
+    nav ul li{
+        display:block;  /* because the contents in the menu bar looked messy*/
+        margin:25px;
+    }
+    nav ul .fas{
+        position:absolute;
+        top:25px;
+        left:25px;
+        cursor:pointer;
+        }
+    #about .sub-title{
+        font-size:30px;
+    }
+    .sub-title+p{
+        font-size:18px;
+    }
+    .about-col-1{
+        margin-bottom:50px;   /*margin-top:30px; in about-col-2 will also work*/
+    }
+
+    .about-col-2{
+        height:100vh;
+        width:100%;
+    }
+
+    .about-col-2,.about-col-1{             /*because no matter how much youmake the font small
+                                it will get cut off, so just adjust the width of the container it is in*/
+        flex-basis:100%;
+    }
+    .tab-links{
+        font-size:16px;
+        margin-right:20px;
+    }
+    .contact-left,.contact-right{
+        flex-basis:100%;
+    }
+    .copyright{
+        font-size:14px;
+    }
+}
+

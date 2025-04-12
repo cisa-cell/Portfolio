@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/811b3bdedb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container"> <!--why is container and page name used? so that we can apply a common style for all the 
+                                    font and text for all pages of the document-->
+            <nav>
+                <img src="images\logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">contact</a></li>
+                    <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p> UI/UX Designer</p>
+                <h1>Hi, I'm <span>Cinol</span> Samson <br> from India </h1>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------about--------------------------- -->
+    <div id="about">
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images\user.png" alt="photo">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p> I’m a passionate software developer who loves turning ideas into functional and impactful solutions.
+                         I enjoy problem-solving, designing intuitive user experiences, and continuously learning new technologies. 
+                         Whether it’s front-end development, back-end logic, or full-stack projects, I thrive on the challenge of 
+                         building efficient and scalable applications. My approach to development is driven by curiosity 
+                         and a desire to create meaningful software that improves everyday life. With technology evolving rapidly, 
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web development</span><br>Web App interfaces</li>
+                            <li><span>App development</span><br>Building Android/iOS apps</li>
+                        </ul>
+                    </div>
+                <!--experience-->
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024</span><br>basic front end developing</li>
+                            <li><span>2022</span><br>Web App interfaces</li>
+                        </ul>
+                    </div>
+                <!--education-->
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2024-current</span><br>Studying CSE at GEC Kottayam</li>
+                            <li><span>2022-2024</span><br>Mary Mount Public school</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-----------------------------services------------------------------>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="service-list">
+                <!--objects for grid are usually placed in div -->
+                <div>
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Web Design</h2>
+                    <p>Designing web interfaces that are user-friendly and visually appealing</p>
+                    <a href="#">Read more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>App Design</h2>
+                    <p> Creating app designs that are aesthetic and functional</p>
+                    <a href="#">Read more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>Creating wireframes according to what the client wants</p>
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------portfolio---------------------------------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images\work-1.png" alt="">
+                    <div class="layer"> <!--to extra layers to come after transition are nested-->
+                        <h3>Rock paper scissors</h3>
+                        <p>interactive rock paper scissors game</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images\work-2.png" alt="">
+                    <div class="layer">
+                        <h3>Ping pong game</h3>
+                        <p>a game that can be played by 2 users and keeps track of the score</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images\work-3.png" alt="">
+                    <div class="layer">
+                        <h3>Portfolio website</h3>
+                        <p>Has interavtive elements and different sections</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!-------------------------------contact---------------------------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>cinolsamson2006@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+91 9447570738</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a class="btn btn2" href="images\my-cv.pdf" download>Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name='submit-to-google-sheet'>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <textarea name="message" rows="6" placeholder="Your message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>                  
+                </div>
+            </div>
+        </div>
+        <div class="copyright">Copyright © Cinol. Made with <i class="fa-solid fa-heart"></i> by easy tutorials </div>
+    </div>
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links"); /*elementsssssssssss*/
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for (tablink of tablinks){
+                tablink.classList.remove("active-link"); 
+            }
+            for (tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+        var sidemenu=document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        
+        function closemenu(){
+            sidemenu.style.right="-200px";65
+        }
+    
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzRLX9yo0ROWXZsURVMyQiIp4dxO47g8Ck2E4TNDJ2RdnPcRffJ6GK5_WxgEelrW4w/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg");
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully";
+                setTimeout(function(){           /*after 5000 sec of "message sent succ"
+                                                being displayed, the inner html will be made blank*/
+                    msg.innerHTML=""},5000
+                ) 
+                form.reset()
+            }
+            )
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
